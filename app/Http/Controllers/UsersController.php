@@ -49,7 +49,7 @@ class UsersController extends Controller
         return response()->json(['error'=>$validator->errors()->all()]);
     }
     
-    public function getUserInfo(Request $request){
+    public function editUserInfo(Request $request){
         
         $validator = Validator::make($request->all(),[
             'first_name' => 'required|min:1|max:45',
@@ -84,6 +84,12 @@ class UsersController extends Controller
             ];
             return response()->json($data);
         }
+    }
+    
+    public function getUserInfo(Request $request){
+        $data = \App\Users::where('id', $request['id'])->get();
+     //   return Response::json(array('data' => $data));
+        return response()->json(['data' => $data]);
     }
    
 }

@@ -16,8 +16,9 @@ Route::get('/', function () {
 });
 
     Route::get('/', 'UsersController@readUserData');
+    Route::get('api/getUserInfo/{id}', 'UsersController@getUserInfo');
     Route::post('api/addUser', 'UsersController@addUser');
-    Route::post('api/getUserInfo', 'UsersController@api/getUserInfo');
+    Route::post('api/editUserInfo', 'UsersController@edittUserInfo');
     Route::post('api/delete', 'UsersController@deleteUser');
     
     

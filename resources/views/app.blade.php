@@ -132,7 +132,7 @@
             	  }
 	          });
 			  $.ajax({
-	              url: "{{ url('/api/getUserInfo') }}",
+	              url: "{{ url('/api/editUserInfo') }}",
 	              method: 'post',
 	              data: {
 	            	  first_name: $('#first_name_'+idarr[1]).val(),
