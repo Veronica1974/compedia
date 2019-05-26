@@ -88,7 +88,7 @@ class UsersController extends Controller
     
     public function getUserInfo(Request $request){
         $data = \App\Users::where('id', $request['id'])->get();
-     //   return Response::json(array('data' => $data));
+     
         return response()->json(['data' => $data]);
     }
    
